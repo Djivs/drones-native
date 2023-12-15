@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { deviceReducer } from './dataSlice';
+import { regionReducer } from './regionSlice';
 
 
-export const store = configureStore({ reducer: {device: deviceReducer} });
+export const store = configureStore({ reducer: {region: regionReducer} });
