@@ -18,8 +18,8 @@ export default function RegionsScreen({ navigation }) {
         console.log(regions)
     }, [dispatch])
     return (
-        <ScrollView>
-            <View>
+        <ScrollView >
+            <View style={styles.page}>
                 {!!regions && 
                     regions.map((region) => <RegionCard key={region.ID} {...region} navigation={navigation}></RegionCard>)
                     }

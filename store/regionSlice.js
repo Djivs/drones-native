@@ -10,15 +10,12 @@ export const regionSlice = createSlice({
     initialState,
     reducers: {
         setRegions: (state, { payload }) => {
-            console.log('setRegions');
             state.regions = payload;
         },
         setRegion: (state, { payload }) => {
-            console.log('setRegion');
             state.region = payload;
         },
         resetRegion: (state) => {
-            console.log('resetRegion');
             state.region = {};
         },
     },

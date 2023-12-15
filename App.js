@@ -14,8 +14,8 @@ export default function App() {
       <Provider store={store}>
         <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Regions" component={RegionsScreen} />    
-          <Stack.Screen name="Region" component={RegionScreen} />    
+          <Stack.Screen name="Регионы" component={RegionsScreen} />    
+          <Stack.Screen name="Регион" component={RegionScreen} />    
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
