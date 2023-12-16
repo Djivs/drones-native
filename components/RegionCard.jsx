@@ -8,7 +8,7 @@ export default function RegionCard({ navigation, ...props}) {
         navigation.navigate('Регион', {name: props.Name})
     }
 
-    const [imageLink, setImageLink] = useState("http://192.168.0.105:9000/regionimages/empty.webp")
+    const [imageLink, setImageLink] = useState("http://192.168.183.1:9000/regionimages/empty.webp")
 
     useEffect(() => {
         if (props.ImageName) {

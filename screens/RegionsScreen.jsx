@@ -1,4 +1,4 @@
-import { View, Text, Button, ScrollView } from 'react-native';
+import { View, Text, Button, ScrollView, TextInput } from 'react-native';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { axiosInstance } from '../api';
@@ -10,15 +10,19 @@ export default function RegionsScreen({ navigation }) {
     const dispatch = useDispatch()
     const {regions} = useSelector((store) => store.region)
 
+    const handleTextChange = async (newText) => {
+        await axiosInstance.get('/regions?name_pattern=' + newText).then((response) => dispatch(setRegions(response?.data)))
+    }
+
     useEffect(() => {
         async function getAllRegions() {
             await axiosInstance.get('/regions').then((response) => dispatch(setRegions(response?.data)))
         }
         getAllRegions()
-        console.log(regions)
     }, [dispatch])
     return (
         <ScrollView >
+            <TextInput style={styles.input} onChangeText={newText => handleTextChange(newText)}></TextInput>
             <View style={styles.page}>
                 {!!regions && 
                     regions.map((region) => <RegionCard key={region.ID} {...region} navigation={navigation}></RegionCard>)
@@ -37,4 +41,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#2a2a2a',
     },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+      },
 });

@@ -31,7 +31,7 @@ export default function RegionScreen({ route }) {
         <View style={styles.container}>
             <Image
                 style={styles.image}
-                source= {{ uri: (region.ImageName ? `http://192.168.0.105:9000/regionimages/${region.ImageName}` : "http://192.168.0.105:9000/regionimages/empty.webp")}}
+                source= {{ uri: (region.ImageName ? `http://192.168.183.1:9000/regionimages/${region.ImageName}` : "http://192.168.0.105:9000/regionimages/empty.webp")}}
                 resizeMode = 'contain'
             />
             <Text style = {styles.titleText}>{region.Name}</Text>
